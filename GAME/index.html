@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Jogo 2D — Mundo Quase Infinito</title>
+<link rel="stylesheet" href="scripts/style.css">
+</head>
+<body>
+<div id="ui">
+  <div class="card">
+    <div style="font-weight:700">Jogo 2D — Mundo Quase Infinito (Top-down)</div>
+    <div class="small">Movimento: WASD / setas. Missões, coleta e mundo por chunks.</div>
+  </div>
+
+  <div class="card">
+    <label>Nome do jogador</label>
+    <input id="name" placeholder="Seu nome" />
+    <div style="margin-top:8px;display:flex;gap:8px">
+      <button id="create">Criar jogador</button>
+      <button id="saveLocal" class="ghost">Salvar local</button>
+      <button id="loadRemote" class="ghost">Carregar server.json (raw GitHub)</button>
+    </div>
+  </div>
+
+  <div class="card">
+    <div style="font-weight:700">Classe</div>
+    <select id="classSelect"></select>
+  </div>
+
+  <div class="card">
+    <div style="font-weight:700">Missões Ativas</div>
+    <div id="questsList" class="small">Nenhuma missão ativa</div>
+    <div style="margin-top:8px;display:flex;gap:8px">
+      <button id="generateQuest">Gerar Missão</button>
+      <button id="abandonQuest" class="ghost">Abandonar</button>
+    </div>
+  </div>
+
+  <div class="card">
+    <div style="font-weight:700">Backup / Restaurar (ADM)</div>
+    <div class="small">ADM usa upload/download de <code>data.json</code> local para gerenciar</div>
+    <div style="margin-top:8px;display:flex;gap:8px">
+      <input id="fileInput" type="file" accept="application/json" style="display:none" />
+      <button id="loadLocalFile" class="ghost">Importar data.json</button>
+      <button id="exportLocal" class="ghost">Exportar data.json</button>
+    </div>
+  </div>
+
+  <div class="card">
+    <div style="font-weight:700">Info</div>
+    <div id="info" class="small">—</div>
+  </div>
+</div>
+
+<div id="game"><canvas id="c" width="1024" height="640"></canvas></div>
+
+<script src="scripts/world.js"></script>
+<script src="scripts/player.js"></script>
+<script src="scripts/quests.js"></script>
+<script src="scripts/net.js"></script>
+<script src="scripts/main.js"></script>
+</body>
+</html>
