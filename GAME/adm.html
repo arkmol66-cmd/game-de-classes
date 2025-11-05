@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="pt-BR">
+<head><meta charset="utf-8" /><meta name="viewport" content="width=device-width,initial-scale=1" /><title>Painel ADM — Local</title>
+<link rel="stylesheet" href="scripts/style.css">
+</head>
+<body>
+  <h1>Painel ADM (Local edit)</h1>
+  <p class="small">Use este painel para editar o arquivo <code>server/data.json</code>. Como não estamos usando um backend, o painel importa/exporta o arquivo via upload/download.</p>
+
+  <div class="card">
+    <label>Abrir data.json (do seu computador)</label>
+    <input id="fileOpen" type="file" accept="application/json" />
+    <div style="margin-top:8px;display:flex;gap:8px">
+      <button id="applyFile" class="ghost">Aplicar (carregar no jogo via localStorage)</button>
+      <button id="downloadFile">Baixar data.json</button>
+    </div>
+  </div>
+
+  <div class="card">
+    <label>Editor JSON</label>
+    <textarea id="editor" rows="12">{ "players": {}, "classes": [], "settings": { "maxLevel": 100 } }</textarea>
+    <div style="margin-top:8px;display:flex;gap:8px">
+      <button id="saveEditor">Salvar editor para download</button>
+      <button id="pushToLocalStorage" class="ghost">Enviar ao jogo (localStorage)</button>
+    </div>
+  </div>
+
+<script src="scripts/net.js"></script>
+<script src="scripts/adm.js"></script>
+</body>
+</html>
